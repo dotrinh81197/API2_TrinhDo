@@ -1,0 +1,158 @@
+{
+  "C01_Create_Issue": [
+    {
+      "TestDataPurpose": "C01_Create_Issue",
+      "body": {
+        "update": {},
+        "fields": {
+          "summary": "Issue summary by API",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "bodyEmptySummary": {
+        "update": {},
+        "fields": {
+          "summary": "",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "ErrorsSummary": "You must specify a summary of the issue.",
+      "SuccessStatusCode": 201,
+      "BadRequestStatus": 400
+    }
+  ],
+  "C02_Add_Comment_Into_Issue": [
+    {
+      "TestDataPurpose": "C02_Add_Comment_Into_Issue",
+      "PayLoadCreateIssue": {
+        "update": {},
+        "fields": {
+          "summary": "Issue summary by API",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "PayLoadAddComment": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "comment by Trinh"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "PayLoadAddCommentEmptyText": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "ErrorsComment": "Comment body can not be empty!",
+      "statusCode": 201,
+      "BadRequestStatus": 400
+    }
+  ],
+  "C03_Delete_Issue": [
+    {
+      "TestDataPurpose": "C03_Delete_Issue",
+      "SuccessStatusCode": 201,
+      "PayLoadCreateIssue": {
+        "update": {},
+        "fields": {
+          "summary": "Issue summary by API",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      }
+    }
+  ],
+  "C04_Update_Comment": [
+    {
+      "TestDataPurpose": "C03_Delete_Issue",
+      "SuccessStatusCode": 200,
+      "PayLoadCreateIssue": {
+        "update": {},
+        "fields": {
+          "summary": "Issue summary by API",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "PayLoadAddComment": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "comment by Trinh"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "PayLoadUpdateComment": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "comment trinh update"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

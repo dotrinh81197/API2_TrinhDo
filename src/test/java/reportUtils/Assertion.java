@@ -36,6 +36,20 @@ public class Assertion extends LogReport{
         }
     }
 
+    public void assertNotEquals(Object actual, String expected, String description) {
+        logStep = ExtTest.getTest().createNode(description);
+        try {
+            if (actual.toString().equals(expected)) {
+                logStep.log(Status.FAIL, String.format("Actual Result: %s<br/>expected Result: %s", actual, expected));
+            } else {
+                logStep.log(Status.PASS, String.format("Actual Result: %s<br/>expected Result: %s", actual, expected));
+            }
+        } catch (Exception e) {
+            logStep.log(WARNING, "assertEquals error");
+            logException(e);
+        }
+    }
+
     public void assertNotNull(Object o, String description) {
         logStep = ExtTest.getTest().createNode(description);
         try {

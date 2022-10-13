@@ -3,9 +3,10 @@
 <suite name="IssueSuite">
     <test name="IssueSuite" parallel="methods" thread-count="3">
         <classes>
-            <class name="suites.issues.C01_get_issue"/>
-            <class name="suites.issues.C01_Create_Issue"/>
-            <class name="suites.issues.C03_edit_issue"/>
+            <class name="suites.testcases.C01_Create_Issue"/>
+            <class name="suites.testcases.C02_Add_Comment_Into_Issue"/>
+            <class name="suites.testcases.C03_Delete_Issue"/>
+            <class name="suites.testcases.C04_Update_Comment"/>
         </classes>
     </test>
 </suite>
