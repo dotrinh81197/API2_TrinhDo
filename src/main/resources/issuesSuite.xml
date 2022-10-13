@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="IssueSuite">
+    <test name="IssueSuite" parallel="methods" thread-count="3">
+        <classes>
+            <class name="suites.issues.C01_get_issue"/>
+            <class name="suites.issues.C01_Create_Issue"/>
+            <class name="suites.issues.C03_edit_issue"/>
+        </classes>
+    </test>
+</suite>

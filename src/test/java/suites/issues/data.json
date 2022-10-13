@@ -1,0 +1,55 @@
+{
+  "C01_Create_Issue": [
+    {
+      "TestDataPurpose": "C02 Verify user can call create issue successfully",
+      "body": {
+        "update": {},
+        "fields": {
+          "summary": "Issue summary by API",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "statusCode": 201
+    }
+  ],
+  "C02_Add_Comment_Into_Issue": [
+    {
+      "TestDataPurpose": "C02 Verify user can call create issue successfully",
+      "PayLoadCreateIssue": {
+        "update": {},
+        "fields": {
+          "summary": "Issue summary by API",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "PayLoadAddComment": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "comment by Trinh"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "statusCode": 201
+    }
+  ]
+}
