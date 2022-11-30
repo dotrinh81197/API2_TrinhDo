@@ -6,7 +6,8 @@ public enum Key {
     CLIENT_SECRET("client_secret"),
     AUDIENCE("audience"),
     CLOUD_ID("cloud_id"),
-    AUTHORIZATION_URL("authorization_url");
+    AUTHORIZATION_URL("authorization_url"),
+    CODE("code");
 
     private String text;
 

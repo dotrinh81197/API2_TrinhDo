@@ -1,158 +1,144 @@
 {
-  "C01_Create_Issue": [
+  "TC01_Create_Course_Successfully": [
     {
-      "TestDataPurpose": "C01_Create_Issue",
+      "TestDataPurpose": "TC01_Create_Course_Successfully",
       "body": {
-        "update": {},
-        "fields": {
-          "summary": "Issue summary by API",
-          "project": {
-            "id": "10000"
-          },
-          "issuetype": {
-            "id": "10001"
-          }
-        }
+        "name": "Course1",
+        "section": "Course1",
+        "descriptionHeading": "Course1",
+        "description": "Course1",
+        "room": "Course1",
+        "ownerId": "dotrinh81197@gmail.com",
+        "courseState": "PROVISIONED"
       },
-      "bodyEmptySummary": {
-        "update": {},
-        "fields": {
-          "summary": "",
-          "project": {
-            "id": "10000"
-          },
-          "issuetype": {
-            "id": "10001"
-          }
-        }
-      },
-      "ErrorsSummary": "You must specify a summary of the issue.",
-      "SuccessStatusCode": 201,
-      "BadRequestStatus": 400
+      "SuccessStatusCode": 200
     }
   ],
-  "C02_Add_Comment_Into_Issue": [
+  "TC02_Create_Course_With_Empty_OwnerId": [
     {
-      "TestDataPurpose": "C02_Add_Comment_Into_Issue",
-      "PayLoadCreateIssue": {
-        "update": {},
-        "fields": {
-          "summary": "Issue summary by API",
-          "project": {
-            "id": "10000"
-          },
-          "issuetype": {
-            "id": "10001"
-          }
-        }
+      "TestDataPurpose": "TC02_Create_Course_With_Empty_OwnerId",
+      "bodyEmptyOwnerId": {
+        "name": "Course1",
+        "section": "Course1",
+        "descriptionHeading": "Course1",
+        "description": "Course1",
+        "room": "Course1",
+        "ownerId": "",
+        "courseState": "PROVISIONED"
       },
-      "PayLoadAddComment": {
-        "body": {
-          "version": 1,
-          "type": "doc",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "comment by Trinh"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "PayLoadAddCommentEmptyText": {
-        "body": {
-          "version": 1,
-          "type": "doc",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": ""
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "ErrorsComment": "Comment body can not be empty!",
-      "statusCode": 201,
-      "BadRequestStatus": 400
+      "BadRequestStatus": 400,
+      "ErrorsMessage": "course.ownerId: You must specify an ownerId",
+      "ErrorsStatus": "INVALID_ARGUMENT"
     }
   ],
-  "C03_Delete_Issue": [
+  "TC03_Create_Topic_Successfully": [
     {
-      "TestDataPurpose": "C03_Delete_Issue",
-      "SuccessStatusCode": 201,
-      "PayLoadCreateIssue": {
-        "update": {},
-        "fields": {
-          "summary": "Issue summary by API",
-          "project": {
-            "id": "10000"
-          },
-          "issuetype": {
-            "id": "10001"
-          }
-        }
-      }
+      "TestDataPurpose": "TC03_Create_Topic_Successfully",
+      "bodyCreateCourse": {
+        "name": "Course1",
+        "section": "Course1",
+        "descriptionHeading": "Course1",
+        "description": "Course1",
+        "room": "Course1",
+        "ownerId": "dotrinh81197@gmail.com",
+        "courseState": "PROVISIONED"
+      },
+      "bodyCreateTopic": {
+        "topicId": "1",
+        "name": "Topic1"
+      },
+      "SuccessStatusCode": 200
     }
   ],
-  "C04_Update_Comment": [
+  "TC04_Create_Topic_With_Empty_Name": [
     {
-      "TestDataPurpose": "C03_Delete_Issue",
-      "SuccessStatusCode": 200,
-      "PayLoadCreateIssue": {
-        "update": {},
-        "fields": {
-          "summary": "Issue summary by API",
-          "project": {
-            "id": "10000"
-          },
-          "issuetype": {
-            "id": "10001"
+      "TestDataPurpose": "TC04_Create_Topic_With_Empty_Name",
+      "bodyCreateCourse": {
+        "name": "Course1",
+        "section": "Course1",
+        "descriptionHeading": "Course1",
+        "description": "Course1",
+        "room": "Course1",
+        "ownerId": "dotrinh81197@gmail.com",
+        "courseState": "PROVISIONED"
+      },
+      "bodyCreateTopic": {
+        "topicId": "1",
+        "name": "Topic1"
+      },
+      "bodyTopicEmptyName": {
+        "topicId": "1",
+        "name": ""
+      },
+      "BadRequestStatus": 400,
+      "ErrorsMessage": "Request contains an invalid argument.",
+      "ErrorsStatus": "INVALID_ARGUMENT"
+    }
+  ],
+  "TC05_Create_CourseWork_Successfully": [
+    {
+      "TestDataPurpose": "TC05_Create_CourseWork_Successfully",
+      "bodyCreateCourse": {
+        "name": "Course1",
+        "section": "Course1",
+        "descriptionHeading": "Course1",
+        "description": "Course1",
+        "room": "Course1",
+        "ownerId": "dotrinh81197@gmail.com",
+        "courseState": "PROVISIONED"
+      },
+      "bodyCreateTopic": {
+        "topicId": "1",
+        "name": "Topic1"
+      },
+      "bodyCreateCourseWork": {
+        "id": "1",
+        "title": "1",
+        "description": "1",
+        "workType": "ASSIGNMENT",
+        "assignment": {
+          "studentWorkFolder": {
+            "id": "1",
+            "title": "1",
+            "alternateLink": "1"
           }
         }
       },
-      "PayLoadAddComment": {
-        "body": {
-          "version": 1,
-          "type": "doc",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "comment by Trinh"
-                }
-              ]
-            }
-          ]
+      "SuccessStatusCode": 200
+    }
+  ],
+  "TC06_Create_CourseWork_Empty_Title": [
+    {
+      "TestDataPurpose": "TC06_Create_CourseWork_Empty_Title",
+      "bodyCreateCourse": {
+        "name": "Course1",
+        "section": "Course1",
+        "descriptionHeading": "Course1",
+        "description": "Course1",
+        "room": "Course1",
+        "ownerId": "dotrinh81197@gmail.com",
+        "courseState": "PROVISIONED"
+      },
+      "bodyCreateTopic": {
+        "topicId": "1",
+        "name": "Topic1"
+      },
+      "bodyCreateCourseWorkEmptyTitle": {
+        "id": "1",
+        "title": "",
+        "description": "1",
+        "workType": "ASSIGNMENT",
+        "assignment": {
+          "studentWorkFolder": {
+            "id": "1",
+            "title": "1",
+            "alternateLink": "1"
+          }
         }
       },
-      "PayLoadUpdateComment": {
-        "body": {
-          "version": 1,
-          "type": "doc",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "comment trinh update"
-                }
-              ]
-            }
-          ]
-        }
-      }
+      "BadRequestStatus": 400,
+      "ErrorsMessage": "title: Title is required",
+      "ErrorsStatus": "INVALID_ARGUMENT"
     }
   ]
 }

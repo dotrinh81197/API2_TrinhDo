@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="IssueSuite">
+    <test name="IssueSuite" parallel="methods" thread-count="3">
+        <classes>
+            <class name="suites.testcases.TC01_Create_Course_Successfully"/>
+            <class name="suites.testcases.TC02_Create_Course_With_Empty_OwnerId"/>
+            <class name="suites.testcases.TC03_Create_Topic_Successfully"/>
+            <class name="suites.testcases.TC04_Create_Topic_With_Empty_Name"/>
+            <class name="suites.testcases.TC05_Create_CourseWork_Successfully"/>
+            <class name="suites.testcases.TC06_Create_CourseWork_Empty_Title"/>
+
+        </classes>
+    </test>
+</suite>

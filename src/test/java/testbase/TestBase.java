@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import reportUtils.ExtTest;
+import utils.RestAssuredConfiguration;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -32,14 +33,12 @@ import static common.Constants.TEST_DATA_JSON;
 public class TestBase {
 
     public ExtentTest logSuite;
-    protected  String stepDescription;
+    protected String stepDescription;
     private String testCaseName;
 
     @BeforeSuite
     public void beforeSuite() throws IOException {
-
-
-//
+        Constants.REFRESH_TOKEN = RestAssuredConfiguration.getRefreshToken();
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");
         LocalDateTime now = LocalDateTime.now();
         String reportFilePath = OUTPUT_PATH + "/report-" + df.format(now) + ".html";
